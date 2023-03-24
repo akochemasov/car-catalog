@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import exp from "constants";
 import Layout from "@/components/layouts/Layout";
 
 const CarPage = () => {
@@ -8,7 +7,7 @@ const CarPage = () => {
   console.log(router.asPath, router.pathname, router.query);
 
   return (
-    <Layout>
+    <Layout title={`Car ${router.query.id}`} description={"car"}>
       <h2>Car page</h2>
 
       {/* нет возможности вернуться назад */}

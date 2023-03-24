@@ -7,7 +7,7 @@ import Image404 from "../../public/404.png";
 
 const NotFound = () => {
   return (
-    <Layout>
+    <Layout title={"Not found"}>
       <Head>
         <title>Not found</title>
       </Head>
