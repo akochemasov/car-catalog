@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import exp from "constants";
+import Layout from "@/components/layouts/Layout";
 
 const CarPage = () => {
   const router = useRouter();
@@ -7,7 +8,7 @@ const CarPage = () => {
   console.log(router.asPath, router.pathname, router.query);
 
   return (
-    <div>
+    <Layout>
       <h2>Car page</h2>
 
       {/* нет возможности вернуться назад */}
@@ -17,7 +18,7 @@ const CarPage = () => {
 
       {/* можно вернуться назад */}
       <button onClick={() => router.replace("/")}>Go home</button>
-    </div>
+    </Layout>
   );
 };
 
