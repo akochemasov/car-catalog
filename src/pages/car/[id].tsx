@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
+import exp from "constants";
 
-export default function CarPage() {
+const CarPage = () => {
   const router = useRouter();
 
   console.log(router.asPath, router.pathname, router.query);
@@ -18,4 +19,6 @@ export default function CarPage() {
       <button onClick={() => router.replace("/")}>Go home</button>
     </div>
   );
-}
+};
+
+export default CarPage;

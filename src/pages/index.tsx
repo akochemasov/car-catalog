@@ -1,10 +1,12 @@
 import Head from "next/head";
 import HomeScreen from "@/components/screens/home/HomeScreen";
 
-export default function HomePage() {
+const HomePage = () => {
   return (
     <>
       <HomeScreen />
     </>
   );
-}
+};
+
+export default HomePage;

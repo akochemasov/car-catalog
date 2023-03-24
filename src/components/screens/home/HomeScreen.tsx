@@ -7,7 +7,7 @@ import styles from "./HomeScreen.module.css";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-export default function HomeScreen() {
+const HomeScreen = () => {
   const {} = useRouter();
 
   return (
@@ -124,4 +124,6 @@ export default function HomeScreen() {
       </main>
     </>
   );
-}
+};
+
+export default HomeScreen;
