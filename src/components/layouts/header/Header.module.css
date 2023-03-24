@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  margin: 14px 0;
+}
+
+.wrapper a {
+  color: azure;
+  margin: 0 10px;
+  transition: color .4s ease-in-out;
+}
+
+.wrapper a:hover, .wrapper .active {
+  color: #71A8FC;
+}
