@@ -1,10 +1,11 @@
 import Image from "next/image";
-import { Inter } from "next/font/google";
+import { Inter, Roboto } from "next/font/google";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Layout from "@/components/layouts/Layout";
 
 const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({ weight: "100", subsets: ["latin"] });
 
 import styles from "./HomeScreen.module.css";
 
@@ -19,7 +20,7 @@ const HomeScreen = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
+      <main className={styles.main} style={roboto.style}>
         <div className={styles.description}>
           <p>
             Get started by editing&nbsp;
@@ -71,10 +72,10 @@ const HomeScreen = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <h2 className={inter.className}>
+            <h2 className={roboto.className}>
               Docs <span>-&gt;</span>
             </h2>
-            <p className={inter.className}>
+            <p style={roboto.style}>
               Find in-depth information about Next.js features and&nbsp;API.
             </p>
           </a>
