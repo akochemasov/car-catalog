@@ -5,8 +5,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 import styles from "./HomeScreen.module.css";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 export default function HomeScreen() {
+  const {} = useRouter();
+
   return (
     <>
       <Head>
