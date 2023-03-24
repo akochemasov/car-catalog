@@ -7,9 +7,14 @@ import Layout from "@/components/layouts/Layout";
 const inter = Inter({ subsets: ["latin"] });
 
 import styles from "./HomeScreen.module.css";
+import { useEffect } from "react";
 
 const HomeScreen = () => {
   const {} = useRouter();
+
+  useEffect(() => {
+    console.log("API_KEY", process.env.NEXT_PUBLIC_API_KEY);
+  }, []);
 
   return (
     <Layout title={"Home"} description={"home"}>
