@@ -31,7 +31,7 @@ export const getStaticProps: GetStaticProps<ICarData> = async () => {
 
   return {
     //обязательно обернуть в объект
-    props: { cars },
+    props: { cars }, //пропсы попадаю в компонент HomePage({cars})
     revalidate: 60, //ревалидация данных - это ISR
     // notFound,
     // redirect,

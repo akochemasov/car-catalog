@@ -1,7 +1,13 @@
-import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { ICarDataSingle } from "@/types/car.types";
+import {
+  GetServerSideProps,
+  GetStaticPaths,
+  GetStaticProps,
+  NextPage,
+} from "next";
+import { ICarData, ICarDataSingle } from "@/types/car.types";
 import CarDetail from "@/components/screens/carDetail/CarDetail";
 import { CarsService } from "@/services/cars.service";
+import exp from "constants";
 
 const CarPage: NextPage<ICarDataSingle> = ({ car }) => {
   return <CarDetail car={car} />;
@@ -22,6 +28,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     fallback: "blocking", //если страница не существует, чтобы делался запрос на сервер - как раз для нового добавленной машины
   };
 };
+
 export const getStaticProps: GetStaticProps<ICarDataSingle> = async ({
   params,
 }) => {
@@ -32,5 +39,14 @@ export const getStaticProps: GetStaticProps<ICarDataSingle> = async ({
     props: { car },
   };
 };
+
+// @ts-ignore
+// export async function getServerSideProps({ query }) {
+//   console.log("context", query);
+//
+//   return {
+//     props: {},
+//   };
+// }
 
 export default CarPage;
