@@ -1,24 +1,36 @@
-import { useRouter } from "next/router";
-import Layout from "@/components/layouts/Layout";
+import { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import { ICarDataSingle } from "@/types/car.type";
+import CarDetail from "@/components/screens/carDetail/CarDetail";
+import { CarsService } from "@/services/cars.service";
 
-const CarPage = () => {
-  const router = useRouter();
+const CarPage: NextPage<ICarDataSingle> = ({ car }) => {
+  return <CarDetail car={car} />;
+};
 
-  console.log(router.asPath, router.pathname, router.query);
+//https://nextjs.org/docs/basic-features/data-fetching/get-static-paths
+export const getStaticPaths: GetStaticPaths = async () => {
+  //указать все пути
+  //todo: а если пути диначиеские? еще добавляется машина?
+  const cars = await CarsService.getAll();
 
-  return (
-    <Layout title={`Car ${router.query.id}`} description={"car"}>
-      <h2>Car page</h2>
+  return {
+    paths: cars.map((car) => ({
+      params: {
+        id: car.id.toString(),
+      },
+    })),
+    fallback: "blocking", //если страница не существует, чтобы делался запрос на сервер - как раз для нового добавленной машины
+  };
+};
+export const getStaticProps: GetStaticProps<ICarDataSingle> = async ({
+  params,
+}) => {
+  //id - это из адресной строки - /car/[id]
+  const car = await CarsService.getById(Number(params?.id));
 
-      {/* нет возможности вернуться назад */}
-      <button onClick={() => router.replace("/")}>Go home (replace)</button>
-
-      <br />
-
-      {/* можно вернуться назад */}
-      <button onClick={() => router.replace("/")}>Go home</button>
-    </Layout>
-  );
+  return {
+    props: { car },
+  };
 };
 
 export default CarPage;

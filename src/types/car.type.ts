@@ -8,3 +8,7 @@ export interface ICar {
 export interface ICarData {
   cars: ICar[];
 }
+
+export interface ICarDataSingle {
+  car: ICar;
+}

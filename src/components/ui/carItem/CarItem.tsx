@@ -20,7 +20,9 @@ const CarItem = ({ data }: { data: ICar }) => {
       <h2>{data.name}</h2>
       <small>{data.price}</small>
 
-      <Link href={`/cars/${data.id}`}>Read more</Link>
+      <div>
+        <Link href={`/car/${data.id}`}>Read more</Link>
+      </div>
     </div>
   );
 };
