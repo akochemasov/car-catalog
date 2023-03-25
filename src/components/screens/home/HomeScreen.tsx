@@ -12,6 +12,8 @@ const HomeScreen = ({ cars }: { cars: ICar[] }) => {
 
   useEffect(() => {
     console.log("API_KEY", process.env.NEXT_PUBLIC_API_KEY);
+    console.log("API_URL", process.env.API_URL);
+    console.log("API_KEY", process.env.API_KEY);
   }, []);
 
   return (
