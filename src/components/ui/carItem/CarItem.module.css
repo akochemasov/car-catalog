@@ -1,0 +1,13 @@
+.wrapper {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.wrapper h2 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.wrapper small {
+  font-size: 16px;
+}

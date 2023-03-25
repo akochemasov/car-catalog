@@ -4,3 +4,7 @@ export interface ICar {
   price: number;
   image: string;
 }
+
+export interface ICarData {
+  cars: ICar[];
+}
