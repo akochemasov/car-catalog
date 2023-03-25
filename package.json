@@ -6,12 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "server": "json-server --watch -p 3001 server/db.json --static server/public",
+    "start-with-server": "concurrently \"npm run dev\" \"npm run server\" "
   },
   "dependencies": {
     "@types/node": "18.15.5",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
+    "axios": "^1.3.4",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "next": "13.2.4",
@@ -20,6 +23,8 @@
     "typescript": "5.0.2"
   },
   "devDependencies": {
+    "concurrently": "^7.6.0",
+    "json-server": "^0.17.3",
     "prettier": "^2.8.6"
   }
 }
