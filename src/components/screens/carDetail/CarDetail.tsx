@@ -8,7 +8,7 @@ const CarDetail: FC<ICarDataSingle> = ({ car }) => {
   const router = useRouter();
 
   return (
-    <Layout title={car.name} description={"Car detail"}>
+    <Layout title={car?.name} description={"Car detail"}>
       <button onClick={() => router.replace("/")}>Go home</button>
       <CarItem data={car} />
     </Layout>

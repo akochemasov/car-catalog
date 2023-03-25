@@ -12,16 +12,16 @@ const CarItem = ({ data }: { data: ICar }) => {
     <div className={styles.wrapper}>
       {/* без http не будет работать. Посмотреть как это можно исправить */}
       <Image
-        src={`http:${url}/${data.image}`}
+        src={`http:${url}/${data?.image}`}
         alt={"car image"}
         width={200}
         height={200}
       />
-      <h2>{data.name}</h2>
-      <small>{data.price}</small>
+      <h2>{data?.name}</h2>
+      <small>{data?.price}</small>
 
       <div>
-        <Link href={`/car/${data.id}`}>Read more</Link>
+        <Link href={`/car/${data?.id}`}>Read more</Link>
       </div>
     </div>
   );
