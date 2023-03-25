@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { ICarDataSingle } from "@/types/car.type";
+import { ICarDataSingle } from "@/types/car.types";
 import Layout from "@/components/layouts/Layout";
 import CarItem from "@/components/ui/carItem/CarItem";
 import { useRouter } from "next/router";

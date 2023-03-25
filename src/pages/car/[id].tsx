@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { ICarDataSingle } from "@/types/car.type";
+import { ICarDataSingle } from "@/types/car.types";
 import CarDetail from "@/components/screens/carDetail/CarDetail";
 import { CarsService } from "@/services/cars.service";
 

@@ -1,6 +1,6 @@
 import HomeScreen from "@/components/screens/home/HomeScreen";
 import { GetServerSideProps, GetStaticProps, NextPage } from "next";
-import { ICarData } from "@/types/car.type";
+import { ICarData } from "@/types/car.types";
 import { CarsService } from "@/services/cars.service";
 
 const HomePage: NextPage<ICarData> = ({ cars }) => {

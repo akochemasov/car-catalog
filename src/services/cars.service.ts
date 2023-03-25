@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ICar } from "@/types/car.type";
+import { ICar } from "@/types/car.types";
 
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL;
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { ICar } from "@/types/car.type";
+import { ICar } from "@/types/car.types";
 import Image from "next/image";
 import Link from "next/link";
 

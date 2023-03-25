@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Inter } from "next/font/google";
 import { useRouter } from "next/router";
-import { ICar } from "@/types/car.type";
+import { ICar } from "@/types/car.types";
 import Layout from "@/components/layouts/Layout";
 import CarItem from "@/components/ui/carItem/CarItem";
 
