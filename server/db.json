@@ -4,25 +4,25 @@
       "id": 1,
       "name": "Toyota Camry",
       "price": 2900,
-      "image": "./images/toyota-camry.png"
+      "image": "images/toyota-camry.png"
     },
     {
       "id": 2,
       "name": "Lada Vesta",
       "price": 1200,
-      "image": "./images/lada-vesta.png"
+      "image": "images/lada-vesta.png"
     },
     {
       "id": 3,
       "name": "Kia K5",
       "price": 3500,
-      "image": "./images/kia-k5.png"
+      "image": "images/kia-k5.png"
     },
     {
       "id": 4,
       "name": "BMW 3 Series",
       "price": 4200,
-      "image": "./images/bmw-3.png"
+      "image": "images/bmw-3.png"
     }
   ]
 }
