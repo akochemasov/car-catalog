@@ -6,7 +6,7 @@ import { CarsService } from "@/services/cars.service";
 const HomePage: NextPage<ICarData> = ({ cars }) => {
   return (
     <>
-      <HomeScreen cars={cars} />
+      <HomeScreen data={cars} />
     </>
   );
 };

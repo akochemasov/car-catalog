@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Inter } from "next/font/google";
 import { useRouter } from "next/router";
 import { ICar } from "@/types/car.types";
@@ -6,9 +6,11 @@ import Layout from "@/components/layouts/Layout";
 import CarItem from "@/components/ui/carItem/CarItem";
 
 import styles from "./HomeScreen.module.css";
+import { CarsService } from "@/services/cars.service";
 
-const HomeScreen = ({ cars }: { cars: ICar[] }) => {
+const HomeScreen = ({ data }: { data: ICar[] }) => {
   const {} = useRouter();
+  const [cars, setCars] = useState(data);
 
   useEffect(() => {
     console.log("API_KEY", process.env.NEXT_PUBLIC_API_KEY);
@@ -18,6 +20,18 @@ const HomeScreen = ({ cars }: { cars: ICar[] }) => {
 
   return (
     <Layout title={"Home"} description={"home"}>
+      <div style={{ margin: 10 }}>
+        <button
+          onClick={async () => {
+            await CarsService.addNewCar();
+            const res = await CarsService.getAll();
+            setCars(res);
+          }}
+        >
+          Add rnd car
+        </button>
+      </div>
+
       {cars?.length ? (
         cars.map((car) => <CarItem key={car.id} data={car} />)
       ) : (
