@@ -36,6 +36,7 @@ export const getStaticProps: GetStaticProps<ICarDataSingle> = async ({
 
   return {
     props: { car },
+    // revalidate: 1,
   };
 };
 

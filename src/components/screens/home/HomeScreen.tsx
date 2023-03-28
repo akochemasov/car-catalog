@@ -9,8 +9,8 @@ import styles from "./HomeScreen.module.css";
 import { CarsService } from "@/services/cars.service";
 
 const HomeScreen = ({ data }: { data: ICar[] }) => {
-  const {} = useRouter();
   const [cars, setCars] = useState(data);
+  const {} = useRouter();
 
   useEffect(() => {
     console.log("API_KEY", process.env.NEXT_PUBLIC_API_KEY);
