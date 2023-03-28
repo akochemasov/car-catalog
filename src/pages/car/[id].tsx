@@ -7,7 +7,6 @@ import {
 import { ICarData, ICarDataSingle } from "@/types/car.types";
 import CarDetail from "@/components/screens/carDetail/CarDetail";
 import { CarsService } from "@/services/cars.service";
-import exp from "constants";
 
 const CarPage: NextPage<ICarDataSingle> = ({ car }) => {
   return <CarDetail car={car} />;
@@ -16,7 +15,7 @@ const CarPage: NextPage<ICarDataSingle> = ({ car }) => {
 //https://nextjs.org/docs/basic-features/data-fetching/get-static-paths
 export const getStaticPaths: GetStaticPaths = async () => {
   //указать все пути
-  //todo: а если пути диначиеские? еще добавляется машина?
+  //todo: а если еще добавляется машина?
   const cars = await CarsService.getAll();
 
   return {
