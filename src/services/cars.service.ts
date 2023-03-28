@@ -13,4 +13,9 @@ export const CarsService = {
     const { data } = await axios.get<ICar[]>("/cars", { params: { id } });
     return data[0];
   },
+
+  async updatePrice(id: ICar["id"], price: ICar["price"]) {
+    const { data } = await axios.patch<ICar>(`/cars/${id}`, { price });
+    return data;
+  },
 };
