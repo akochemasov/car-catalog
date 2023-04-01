@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Inter } from "next/font/google";
 import { useRouter } from "next/router";
 import { ICar } from "@/types/car.types";
 import Layout from "@/components/layouts/Layout";
-import CarItem from "@/components/ui/carItem/CarItem";
 
-import styles from "./HomeScreen.module.css";
 import { CarsService } from "@/services/cars.service";
+import CarsList from "@/components/ui/carsList/CarsList";
 
 const HomeScreen = ({ data }: { data: ICar[] }) => {
   const [cars, setCars] = useState(data);
@@ -32,11 +30,7 @@ const HomeScreen = ({ data }: { data: ICar[] }) => {
         </button>
       </div>
 
-      {cars?.length ? (
-        cars.map((car) => <CarItem key={car.id} data={car} />)
-      ) : (
-        <div>Cars not found</div>
-      )}
+      <CarsList cars={cars} />
     </Layout>
   );
 };
