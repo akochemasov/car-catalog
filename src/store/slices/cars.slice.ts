@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { CarsService } from "@/services/cars.service";
 import { ICar } from "@/types/car.types";
+import { HYDRATE } from "next-redux-wrapper";
 
 interface IState {
   data: ICar[];
@@ -16,6 +17,15 @@ const carsSlice = createSlice({
   reducers: {
     setData: (state, action: PayloadAction<ICar[]>) => {
       state.data = action.payload;
+    },
+  },
+  //todo: чтобы синхронизировать сторы бэкенда и фронтенда
+  extraReducers: {
+    [HYDRATE]: (state, action) => {
+      return {
+        ...state,
+        ...action.payload.cars,
+      };
     },
   },
 });
