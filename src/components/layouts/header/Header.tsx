@@ -6,7 +6,7 @@ import styles from "./Header.module.css";
 
 const Header = () => {
   const router = useRouter();
-  console.log(router.pathname);
+  //console.log(router.pathname);
 
   return (
     <div className={styles.wrapper}>
@@ -18,6 +18,12 @@ const Header = () => {
         className={router.pathname === "/about" ? styles.active : ""}
       >
         About
+      </Link>
+      <Link
+        href={"/cars"}
+        className={router.pathname === "/cars" ? styles.active : ""}
+      >
+        Cars
       </Link>
     </div>
   );
