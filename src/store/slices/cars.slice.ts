@@ -30,4 +30,9 @@ export const getAll = createAsyncThunk(
   }
 );
 
+export const getById = createAsyncThunk("cars/getById", async (id: number) => {
+  const data = await CarsService.getById(id);
+  return data;
+});
+
 export default carsSlice.reducer;
